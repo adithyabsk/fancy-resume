@@ -1,0 +1,6 @@
+-   repo: local
+    hooks:
+    -   id: Linting
+        name: Checks Tex files
+        entry: make lint
+        language: system
