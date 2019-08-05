@@ -1,37 +1,14 @@
 % resume.sty
 
 % Copyright (c) 2012 Cies Breijs
-%
-% The MIT License
-%
-% Permission is hereby granted, free of charge, to any person obtaining a copy
-% of this software and associated documentation files (the "Software"), to deal
-% in the Software without restriction, including without limitation the rights
-% to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-% copies of the Software, and to permit persons to whom the Software is
-% furnished to do so, subject to the following conditions:
-%
-% The above copyright notice and this permission notice shall be included in
-% all copies or substantial portions of the Software.
-%
-% THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-% IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-% FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-% AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-% LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-% OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-% SOFTWARE.
+% Originally licensed under The MIT License
 
-%
+% Modification Copyright (c) 2019 Adithya Balaji
+% Also licensed under The MIT License
+
 % This style contains some commands for making a LaTeX resume
-%
 % Please refer to the README.md file for more info.
-%
-% This project is currently hosted at: https://github.com/cies/resume
-%
-
-
-
+% This project is currently hosted at: https://github.com/adithyabsk/resume
 
 %%% LOAD AND SETUP PACKAGES
 
@@ -49,10 +26,23 @@
 \usepackage{relsize}
 
 % Setup the hyperrefs witht he right color.
-\usepackage{hyperref}  
+\usepackage{hyperref}
 \usepackage{xcolor}
-\definecolor{dark-blue}{rgb}{0.15,0.15,0.4}
+\definecolor{dark-blue}{rgb}{0.05,0.1,0.5}
 \hypersetup{colorlinks,linkcolor={dark-blue},citecolor={dark-blue},urlcolor={dark-blue}}
+
+% Package for key-value interface between input packages
+\usepackage{listofitems}
+
+% Used for conditional statements when writing targetted resumes
+\usepackage{etoolbox}
+
+% Adds unbreakable dashes (e.g. \=/, \==, \===)
+\usepackage[shortcuts]{extdash}
+
+% Adds package to check if string in substring
+\usepackage{xstring}
+
 
 % XeTeX specific stuff with fall-back.
 \usepackage{ifxetex}
@@ -108,8 +98,6 @@
 \pagestyle{empty}
 \setlength{\tabcolsep}{0em}
 \xspaceskip7pt  % some more spacing between sentences (use "i.e.\ " or "with SQL\@. " in case of errors)
-
-
 
 %%% CUSTOM COMMANDS
 
@@ -168,10 +156,27 @@
 % non space that allows line breaks
 \newcommand*{\nsp}{\hskip0pt}
 
+% allows file input command with key-value stores and replacemtn of key value stores in the included file. (e.g. \taginput{test.tex}{TEST=HELLO}; In test.tex > [TEST] World!)
+% Source: https://tex.stackexchange.com/a/338032
+% "The category code tells TeX what to do when it encounters that character later in the text." (ie, when it sees an open brace in a text file)
+\catcode`[=\active %
+\def[#1]{\csname #1\endcsname{}}%
+\catcode`[=12 %
+\newcommand\taginput[2]{%
+  \setsepchar{,}%
+  \readlist*\mydata{#2}%
+  \foreachitem\myvardef\in\mydata{%
+    \setsepchar{=}%
+    \readlist*\myvar{\myvardef}%
+    \expandafter\edef\csname\myvar[1]\endcsname{\myvar[2]}%
+  }%
+  \catcode`[=\active %
+  \input{#1}%
+  \catcode`[=12 %
+}
 
 
 %%% MORE SPECIFIC COMMANDS
 
 % CPP command (found it in some corner of the internet and decided to use it)
 \newcommand{\CPP}{C\nolinebreak[4]\hspace{-.04em}\raisebox{.20ex}{\footnotesize\bf++}}
-

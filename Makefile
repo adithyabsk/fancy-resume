@@ -9,7 +9,10 @@ CONTINUOUS=-pvc
 
 MAIN=resume
 SOURCES=$(MAIN).tex Makefile
+SECTIONS=$(wildcard sections/*.tex)
 # FIGURES := $(shell find figures/* images/* -type f)
+
+.PHONY: all indent clean lint once debug
 
 all: $(MAIN).pdf
 
@@ -26,14 +29,20 @@ force:
 	$(LATEXMK) $(LATEXMKOPT) $(CONTINUOUS) \
 		-pdflatex="$(LATEX) $(LATEXOPT) %O %S" $(MAIN)
 
+indent: $(MAIN).tex $(SECTIONS)
+	for file in $?; do \
+		echo "Working"; \
+	    latexindent -w -s $$file; \
+	done
+
 clean:
 	$(LATEXMK) -C $(MAIN)
 	rm -f $(MAIN).pdfsync
 	rm -rf *~ *.tmp
 	rm -f *.bbl *.blg *.aux *.end *.fls *.log *.out *.fdb_latexmk *.bak*
 
-lint:
-	latexindent -w -s $(MAIN).tex
+lint: |
+	make indent
 	./lacheck_wrapper.sh $(MAIN).tex
 	./chktex_wrapper.sh $(MAIN).tex
 
@@ -42,5 +51,3 @@ once:
 
 debug:
 	$(LATEX) $(LATEXOPT) $(MAIN)
-
-.PHONY: clean force once lint all

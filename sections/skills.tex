@@ -1,0 +1,49 @@
+% skills.tex
+
+\providecommand{\jobfield}{GENERAL}
+
+% special section that has an inline header with a 'hanging' paragraph
+\inlineheadsection{General Technical:}
+{%
+	Enjoys programming in Python, C, and \CPP\@.
+	Has prior experience with \LaTeX, JavaScript, Objective\=/C, Assembler, and Java. *nix command suite, open source project management, Git, and GitHub.
+}
+
+\IfSubStr{\jobfield}{DATASCIENCE}{%
+	\inlineheadsection{Data Science:}
+	{%
+		AWS EC2/\nsp{}Batch/\nsp{}Lambda, SQLAlchemy, BeatifulSoup, Selenium, OpenCV, Pandas, Numpy, Keras, Tensorflow, PyTorch, Scikit\=/Learn, Dask, Matplotlib, Seaborn, and Bokeh.
+	}
+}{}
+
+\IfSubStr{\jobfield}{SWE}{%
+	\inlineheadsection{Dev Ops:}
+	{%
+		First principles (CI/CD and incremental testing), Travis CI, Azure Pipelines, Bash, pre-commit hooks, and Python (PyPI) package management \& deployment.
+	}
+}{}
+
+\IfSubStr{\jobfield}{ACADEMIA}{%
+	\inlineheadsection{Research skills:}
+	{%
+		Tests of statistical significance, mathematical modeling, parsing research papers \& patents efficiently, typesetting for articles \& beamer presentations, and scientific communication.
+	}
+}{}
+
+% Languages by years:
+% Objective-C: 2012--2014
+% Python: 2015--Current
+% C: 2015--Current
+% C++: 2013--2015
+% LaTeX: 2015--2019
+% Assembler: 2017--2018
+% Java: 2014--2016
+
+% 2019 --> 3rd year start
+% 2018 --> 2nd year
+% 2017 --> 1st year
+% 2016 --> 12th grade
+% 2015 --> 11th grade
+% 2014 --> 10th grade
+% 2013 --> 9th grade
+% 2012 --> 8th grade
