@@ -27,6 +27,7 @@
 
 % Setup the hyperrefs witht he right color.
 \usepackage{hyperref}
+\usepackage{url}
 \usepackage{xcolor}
 \definecolor{dark-blue}{rgb}{0.05,0.1,0.5}
 \hypersetup{colorlinks,linkcolor={dark-blue},citecolor={dark-blue},urlcolor={dark-blue}}
@@ -42,6 +43,18 @@
 
 % Adds package to check if string in substring
 \usepackage{xstring}
+
+% Add nicely formatted tables
+\usepackage{booktabs}
+
+% Bibliography
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=ynt
+]{biblatex}
+\addbibresource{publications.bib}
+\nocite{*}
 
 
 % XeTeX specific stuff with fall-back.
@@ -96,7 +109,6 @@
 %%% DOCUMENT WIDE STYLING
 
 \pagestyle{empty}
-\setlength{\tabcolsep}{0em}
 \xspaceskip7pt  % some more spacing between sentences (use "i.e.\ " or "with SQL\@. " in case of errors)
 
 %%% CUSTOM COMMANDS

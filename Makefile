@@ -31,7 +31,7 @@ force:
 
 indent: $(MAIN).tex $(SECTIONS)
 	for file in $?; do \
-		echo "Working"; \
+		echo "Processing $$file"; \
 	    latexindent -w -s $$file; \
 	done
 
