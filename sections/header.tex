@@ -1,19 +1,38 @@
 % header.tex
 
 % title on top of the document
-\maintitle{Adithya Balaji}{January 20, 1999}{Last update on \today}
 
-\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+% Main content
+\newcommand\headerinfo{%
+	\maintitle{Adithya Balaji}{January 20, 1999}{Last update on \today}
 
-% \noindent prevents paragraph's first lines from indenting
-% \mbox is used to obfuscate the email address
-% \sbull is a spaced bullet
-% \\ breaks the line into a new paragraph
-\noindent
-\href{mailto:adithyabsk@gmail.com}{adithyabsk\mbox{}@\mbox{}gmail.com}\sbull{}
-\textsmaller{+}1 (919)--656--2815\sbull{}
-\href{https://github.com/adithyabsk}{github://adithyabsk}\sbull{}
-\href{https://linkedin.com/in/adithyabsk}{linkedin://adithyabsk}\sbull{}
-\href{https://www.adithyabalaji.com}{adithyabalaji.com}\\
-Raleigh\sbull{}
-North Carolina%
+	\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+
+	% \noindent prevents paragraph's first lines from indenting
+	% \mbox is used to obfuscate the email address
+	% \sbull is a spaced bullet
+	% \\ breaks the line into a new paragraph
+	\noindent
+	\href{mailto:adithyabsk@gmail.com}{adithyabsk\mbox{}@\mbox{}gmail.com}\sbull{}
+	\textsmaller{+}1 (919)--656--2815\sbull{}
+	\href{https://github.com/adithyabsk}{github://adithyabsk}\sbull{}
+	\href{https://linkedin.com/in/adithyabsk}{linkedin://adithyabsk}\sbull{}
+	\href{https://www.adithyabalaji.com}{adithyabalaji.com}\\
+	Raleigh\sbull{}
+	North Carolina
+}
+
+% \null \vfill make sure that the image is centered with the multicols text
+\iftoggle{hideimage}{%
+	\headerinfo{}
+}{%
+	\setlength{\columnsep}{-38em}
+	\begin{multicols}{2}
+		\null{}\vfill{}\noindent{}\hskip0.5em
+		\includegraphics[width=2.2cm]{headshot}
+		\columnbreak{}
+		\vfill
+		\headerinfo{}
+		\vfill
+	\end{multicols}
+}

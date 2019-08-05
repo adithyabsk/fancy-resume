@@ -54,6 +54,9 @@
 \addbibresource{publications.bib}
 \nocite{*}
 
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
 
 % XeTeX specific stuff with fall-back.
 \usepackage{ifxetex}
@@ -165,6 +168,9 @@
 
 % non space that allows line breaks
 \newcommand*{\nsp}{\hskip0pt}
+
+% Toggles for the header section
+\newtoggle{hideimage}
 
 % Toggles for the awards section
 % Initial idea source: https://tex.stackexchange.com/a/419224

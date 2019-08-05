@@ -10,7 +10,7 @@ CONTINUOUS=-pvc
 MAIN=resume
 SOURCES=$(MAIN).tex Makefile
 SECTIONS=$(wildcard sections/*.tex)
-# FIGURES := $(shell find figures/* images/* -type f)
+IMAGES := $(shell find images/* -type f)
 
 .PHONY: all indent clean lint once debug
 
@@ -19,7 +19,7 @@ all: $(MAIN).pdf
 .refresh:
 	touch .refresh
 
-$(MAIN).pdf: $(MAIN).tex .refresh $(SOURCES) # $(FIGURES)
+$(MAIN).pdf: $(MAIN).tex .refresh $(SOURCES) $(IMAGES)
 	$(LATEXMK) $(LATEXMKOPT) $(CONTINUOUS) \
 		-pdflatex="$(LATEX) $(LATEXOPT) $(NONSTOP) %O %S" $(MAIN)
 
