@@ -12,8 +12,6 @@
 
 %%% LOAD AND SETUP PACKAGES
 
-
-
 % To finetune lists with a inline heading and indented content.
 % See the Experiences section in the example.
 \usepackage{mdwlist}
@@ -167,6 +165,21 @@
 
 % non space that allows line breaks
 \newcommand*{\nsp}{\hskip0pt}
+
+% Toggles for the awards section
+% Initial idea source: https://tex.stackexchange.com/a/419224
+\newtoggle{awardslow}
+\def\awardslow#1\\{%
+\iftoggle{awardslow}{#1\\}{}
+}
+\newtoggle{awardsmedium}
+\def\awardsmedium#1\\{%
+\iftoggle{awardsmedium}{#1\\}{}
+}
+\newtoggle{awardshigh}
+\def\awardshigh#1\\{%
+\iftoggle{awardshigh}{#1\\}{}
+}
 
 % allows file input command with key-value stores and replacemtn of key value stores in the included file. (e.g. \taginput{test.tex}{TEST=HELLO}; In test.tex > [TEST] World!)
 % Source: https://tex.stackexchange.com/a/338032

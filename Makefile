@@ -32,7 +32,7 @@ force:
 indent: $(MAIN).tex $(SECTIONS)
 	for file in $?; do \
 		echo "Processing $$file"; \
-	    latexindent -w -s $$file; \
+	    latexindent -s $$file -o $$file; \
 	done
 
 clean:

@@ -1,4 +1,5 @@
 % awards.tex
+% provides toggleable priorities: awardslow, awardsmedium, awardshigh
 
 % Links are split up to increase table readability
 \newcommand{\ieeeweb}[1]{\href{http://sites.ieee.org/southeastcon2019/}{#1}}
@@ -18,20 +19,20 @@
 		\toprule
 		\textbf{Year}        &
 		\textbf{Description} &
-		\textbf{Award}                                                                                                              \\
+		\textbf{Award}                                                                                                                                                       \\
 		\midrule
-		2019                 & Departmental (1/700)             & Faculty Senior Scholar Award                                      \\
-		2019                 & 3\textsuperscript{rd} (Regional) & \ieeeweb{IEEE Website Design Competition}                         \\
-		2018                 & top 30/1500                      & \nba{NBA Hackathon Finalist}                                      \\
-		2018                 & 2\textsuperscript{nd} (Regional) & \ieeehacks{IEEE SouthEastCon Hackathon}                           \\
-		2018                 & National                         & \tbp{Tau Beta Pi} (Engineering Honors Society)                    \\
-		2018                 & National                         & \hkn{IEEE Eta Kappa Nu} (ECE Honors Society)                      \\
-		2018                 & National                         & \pkp{Phi Kappa Phi} (oldest all-discipline honor society)         \\
-		2017                 & International                    & \first{State Champions and FIRST Robotics World Quarter Finalist} \\
-		2017                 & International                    & \ibm{IBM Watson Scholar}                                          \\
-		2017                 & 1/300                            & \bbs{Bowman Brockman Endowded Scholar}                            \\
-		2016                 & top 30/nation                    & \beaver{MIT Beaverworks Robotics Institute}                       \\
-		2016                 & International                    & Conrad Spirit of Innovation Power Pitch Winner                    \\
+		\awardshigh{}2019    & Departmental (1/700)             & Faculty Senior Scholar Award                                                                               \\
+		\awardslow{}2019     & 3\textsuperscript{rd} (Regional) & \ieeeweb{IEEE Website Design Competition}                                                                  \\
+		\awardshigh{}2018    & Top 30/1500                      & \nba{NBA Hackathon Finalist}                                                                               \\
+		\awardsmedium{}2018  &                                  & 2\textsuperscript{nd} (Regional)                                 & \ieeehacks{IEEE SouthEastCon Hackathon} \\
+		\awardslow{}2018     & National                         & \tbp{Tau Beta Pi} (Engineering Honors Society)                                                             \\
+		\awardsmedium{}2018  & National                         & \hkn{IEEE Eta Kappa Nu} (ECE Honors Society)                                                               \\
+		\awardshigh{}2018    & National                         & \pkp{Phi Kappa Phi} (oldest all-discipline honor society)                                                  \\
+		\awardshigh{}2017    & International                    & \first{FIRST Robotics State Champion and World Quarter Finalist}                                           \\
+		\awardshigh{}2017    & International                    & \ibm{IBM Watson Scholar}                                                                                   \\
+		\awardslow{}2017     & 1/300                            & \bbs{Bowman Brockman Endowded Scholar}                                                                     \\
+		\awardshigh{}2016    & Top 30/nation                    & \beaver{MIT Beaverworks Robotics Institute}                                                                \\
+		\awardslow{}2016     & International                    & Conrad Spirit of Innovation Power Pitch Winner                                                             \\
 		\bottomrule
 	\end{tabular}
 \end{table}

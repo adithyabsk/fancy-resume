@@ -1,12 +1,5 @@
-% LaTeX source of my resume
-% =========================
-
-% Commented for easy reuse... ;)
-
-% See the `README.md` file for more info.
-
-% This file is licensed under the CC-NC-ND Creative Commons license.
-
+% resume.tex
+% Adithya Balaji
 
 % Start a document with the here given default font size and paper size.
 \documentclass[10pt,letterpaper]{article}
@@ -16,7 +9,7 @@
 
 % Setup the language.
 \usepackage[english]{babel}
-\hyphenation{Some-long-word}
+% \hyphenation{Some-long-word} % How to use hyphenation cmd
 
 % Makes resume-specific commands available.
 \usepackage{resume}
@@ -24,123 +17,32 @@
 \begin{document}  % begin the content of the document
 \sloppy  % this to relax whitespacing in favour of straight margins
 
-% title on top of the document
-\maintitle{Adithya Balaji}{January 20, 1999}{Last update on \today}
+\newcommand\jobfield{DATASCIENCE,SWE,ACADEMIA}
 
-\nobreakvspace{0.3em}  % add some page break averse vertical spacing
+\input{sections/header.tex}%
+\spacedhrule{0.9em}{-0.4em}  % a horizontal line with some vertical spacing before and after
 
-% \noindent prevents paragraph's first lines from indenting
-% \mbox is used to obfuscate the email address
-% \sbull is a spaced bullet
-% \href well..
-% \\ breaks the line into a new paragraph
-\noindent
-\href{mailto:adithyabsk@gmail.com}{adithyabsk\mbox{}@\mbox{}gmail.com}\sbull{}
-\textsmaller{+}1 (919)--656--2815\sbull{}
-\href{https://github.com/adithyabsk}{github://adithyabsk}\sbull{}
-\href{https://linkedin.com/in/adithyabsk}{linkedin://adithyabsk}\sbull{}
-\href{https://www.adithyabalaji.com}{adithyabalaji.com}\\
-Raleigh\sbull{}
-North Carolina\spacedhrule{0.9em}{-0.4em}  % a horizontal line with some vertical spacing before and after
-
-\roottitle{Summary}  % a root section title
-
-\vspace{-1.3em}  % some vertical spacing
-\begin{multicols}{2}  % open a multicolumn environment
-	\noindent
-	\emph{Multifaceted thinker who relentlessly engages problems.
-		Dependable, hardworking, and goal-oriented leader.
-		Methodically analyzes solutions from both bottom-up and top-down approaches. Amicable team player prioritizing honest communication.
-	}
-	\\
-	\\
-	When Adithya was 12 (2011), he opened up Xcode and typed his first lines of code in Objective-C.
-	He released an \acr{iOS} app for a local non-profit later that year and has been voracious coder ever since.\\ \\
-
-	Four years later (2015), he was part of a select group of students in one of the nation's top public, residential early-college programs: \acr{NCSSM}.
-	On full scholarship, he sharpened his programming skills in Data Structures and was introduced to Machine Learning while captaining his robotics team.\\
-
-	In college (2017) he continued to pursue his prior interests in programming, data science, robotics, and rocketry through community leadership roles, research, full-time internships, and part-time work.
-\end{multicols}\spacedhrule{0em}{-0.4em}
+% \roottitle{Summary}  % a root section title
+% \vspace{-1.3em}  % some vertical spacing
+% \input{sections/summary.tex}
 
 \roottitle{Work Experience}
-
-\headedsection{\href{https://georgianpartners.com/}{Georgian Partners}}
-{\textsc{Toronto, Canada}}
-{\headedsubsection{Data Science Intern}
-	{May \apo18--Current} % chktex 8
-	{\bodytext{TODO}}
-}
-
-\headedsection{\href{https://www.csc.ncsu.edu/}{NC State Computer Science Department}}
-{\textsc{Raleigh, North Carolina}}
-{\headedsubsection{Computer Science Research Assisstant}
-	{August \apo17--Current}
-	{\bodytext{TODO}}
-}
-
-\headedsection{\href{https://www.nba.com/thunder/}{Oklahoma City Thunder}}
-{\textsc{Raleigh, North Carolina}}
-{\headedsubsection{Data Science Intern}
-	{January \apo19--May \apo19} % chktex 8
-	{\bodytext{TODO}}
-}
-
-\headedsection{\href{https://precisionlender.com/}{Precision Lender}}
-{\textsc{Cary, North Carolina}}
-{\headedsubsection{Software Engineering Intern}
-	{May \apo17--Aug \apo17} % chktex 8
-	{\bodytext{TODO}}
-}\spacedhrule{0.5em}{-0.4em}
+\input{sections/experience.tex}%
+\spacedhrule{0.5em}{-0.4em}
 
 \roottitle{Extracurriculars}
-
-\headedsection{\href{http://liquidrocketry.com/}{Liquid Rocketry Lab}}
-{\textsc{Raleigh, North Carolina}}
-{\headedsubsection{Chief Business Officer}
-	{Aug \apo18--Current} % chktex 8
-	{\bodytext{TODO}}
-}
-
-\headedsection{\href{http://ewh.ieee.org/sb/nc/ncsu/}{NC State \acr{IEEE} Chapter}}
-{\textsc{Raleigh, North Carolina}}
-{\headedsubsection{Chair (President)}
-	{Aug \apo17--Current} % chktex 8
-	{\bodytext{TODO}}
-}
-
-\headedsection{\href{https://ncstatefirstalumni.com/}{NC State FIRST Alumni Association}}
-{\textsc{Raleigh, North Carolina}}
-{\headedsubsection{President}
-	{Aug \apo18--May \apo19} % chktex 8
-	{\bodytext{TODO}}
-}
-
-%\headedsection
-%  {\href{https://www.tbp.org/off/DisplayChapterInfo.cfm?ID=129}{Tau Beta Pi NC Alpha Chapter}}
-%  {\textsc{Raleigh, North Carolina}} {%
-%  \headedsubsection
-%    {Vice President}
-%    {Aug \apo18 -- May \apo19}
-%    {\bodytext{TODO}}
-%}
-
-\vspace{-0.2em}
-\begin{center}
-	\emph{\small Please refer to \href{http://www.linkedin.com/in/adithyabsk}{Adithya's LinkedIn profile} for a more complete list of experience along.}
-\end{center}%
-%
+\input{sections/extracurriculars.tex}%
 \spacedhrule{-0.2em}{-0.4em}
 
 \roottitle{Education}
-
 \input{sections/education.tex}%
-%
 \spacedhrule{0.5em}{-0.4em}
 
 \roottitle{Awards/Achievements/Societies}%
+% Toggles provided awardshigh, awardslows, awardsmedium
+\toggletrue{awardshigh}
 \input{sections/awards.tex}%
-\spacedhrule{0.5em}{-0.4em}
+\spacedhrule{0.5em}{-0.2em}
 
 \roottitle{Publication}%
 \textbf{Publications (non-reviewed)}
@@ -150,7 +52,6 @@ North Carolina\spacedhrule{0.9em}{-0.4em}  % a horizontal line with some vertica
 \spacedhrule{1.2em}{-0.4em}
 
 \roottitle{Skills}
-\def\jobfield{DATASCIENCE,SWE,ACADEMIA}
 \input{sections/skills.tex}
 % % Add per job skills here
 % \inlineheadsection{Specifically relavent skills:}
