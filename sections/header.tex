@@ -4,6 +4,7 @@
 
 % Main content
 \newcommand\headerinfo{%
+	\vspace{-2cm}
 	\maintitle{Adithya Balaji}{January 20, 1999}{Last update on \today}
 
 	\nobreakvspace{0.3em}  % add some page break averse vertical spacing
@@ -23,16 +24,32 @@
 }
 
 % \null \vfill make sure that the image is centered with the multicols text
-\iftoggle{hideimage}{%
-	\headerinfo{}
-}{%
-	\setlength{\columnsep}{-38em}
-	\begin{multicols}{2}
-		\null{}\vfill{}\noindent{}\hskip0.5em
-		\includegraphics[width=2.2cm]{headshot}
-		\columnbreak{}
-		\vfill
+% Modify columnsep to accomodate image and set back to default value
+\newcommand{\headercontent}{
+	\iftoggle{hideimage}{%
 		\headerinfo{}
-		\vfill
-	\end{multicols}
+	}{%
+		\setlength{\columnsep}{-38em}
+		\begin{multicols}{2}
+			\null{}\vfill{}\noindent{}\hskip0.5em
+			\includegraphics[width=2.2cm]{headshot}
+			\columnbreak{}
+			\vfill
+			\headerinfo{}
+			\vfill
+		\end{multicols}
+		\setlength{\columnsep}{10pt}
+	}%
+	\spacedhrule{-0.2em}{-0.8em}
+	\vspace{1.5em}
+}
+
+\iftoggle{disabletwocols}
+{
+	\headercontent{}
+}
+{
+	\twocolumn[
+		\headercontent{}
+	]
 }

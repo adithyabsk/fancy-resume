@@ -2,10 +2,10 @@
 % Adithya Balaji
 
 % Start a document with the here given default font size and paper size.
-\documentclass[10pt,letterpaper]{article}
+\documentclass[10pt,letterpaper,twocolumn]{article}
 
 % Set the page margins.
-\usepackage[letterpaper,margin=0.5in]{geometry}
+\usepackage[letterpaper,left=0.25in,right=0.25in,top=0.25in,bottom=0.25in]{geometry}
 
 % Setup the language.
 \usepackage[english]{babel}
@@ -19,36 +19,41 @@
 
 \newcommand\jobfield{DATASCIENCE,SWE,ACADEMIA}
 % \toggletrue{hideimage}
-\input{sections/header.tex}%
-\spacedhrule{0.9em}{-0.4em}  % a horizontal line with some vertical spacing before and after
+% \toggletrue{disabletwocols}
+\input{sections/header.tex}
 
 % \roottitle{Summary}  % a root section title
 % \vspace{-1.3em}  % some vertical spacing
-% \input{sections/summary.tex}
+% \input{sections/summary.tex}%
+% \spacedhrule{-0.2em}{-0.4em}
 
 \roottitle{Work Experience}
 \input{sections/experience.tex}%
-\spacedhrule{0.5em}{-0.4em}
+\spacedhrule{-0.2em}{-0.4em}{}
 
 \roottitle{Extracurriculars}
 \input{sections/extracurriculars.tex}%
-\spacedhrule{-0.2em}{-0.4em}
+\spacedhrule{0.6em}{-0.4em}%
+
+\roottitle{Volunteering}
+\input{sections/volunteer.tex}%
+\spacedhrule{0.6em}{-0.4em}%
 
 \roottitle{Education}
 \input{sections/education.tex}%
-\spacedhrule{0.5em}{-0.4em}
+\spacedhrule{0.5em}{-0.4em}%
 
 \roottitle{Awards/Achievements/Societies}%
 % Toggles provided awardshigh, awardslows, awardsmedium
 \toggletrue{awardshigh}
-\input{sections/awards.tex}%
-\spacedhrule{0.5em}{-0.2em}
+\toggletrue{awardsmulti}
+\input{sections/awards.tex}
 
-\roottitle{Publication}%
-\textbf{Publications (non-reviewed)}
-\printbibliography[keyword={nonpeer},heading=none]
-\noindent\textbf{Technical Blogs}
-\printbibliography[keyword={blog},heading=none]%
+
+% \vspace{-2em} % (Play with this if table takes up too much space)
+
+\roottitle{Selected Publications}%
+\input{sections/publications.tex}%
 \spacedhrule{1.2em}{-0.4em}
 
 \roottitle{Skills}
@@ -59,6 +64,10 @@
 %     [RELAVENT_SKILLS]
 % }
 %
+\spacedhrule{1.6em}{-0.4em}
+
+\roottitle{Selected Projects}
+\input{sections/projects.tex}
 \spacedhrule{1.6em}{-0.4em}
 
 \roottitle{Interests}

@@ -13,26 +13,45 @@
 \newcommand{\bbs}[1]{\href{http://www.bowmanbrockman.org/}{#1}}
 \newcommand{\beaver}[1]{\href{https://beaverworks.ll.mit.edu/CMS/bw/bwsi}{#1}}
 
-% Awards Table
-\begin{table}[h!]
-	\begin{tabular}{lll}
-		\toprule
-		\textbf{Year}        &
-		\textbf{Description} &
-		\textbf{Award}                                                                                                                                                       \\
-		\midrule
-		\awardshigh{}2019    & Departmental (1/700)             & Faculty Senior Scholar Award                                                                               \\
-		\awardslow{}2019     & 3\textsuperscript{rd} (Regional) & \ieeeweb{IEEE Website Design Competition}                                                                  \\
-		\awardshigh{}2018    & Top 30/1500                      & \nba{NBA Hackathon Finalist}                                                                               \\
-		\awardsmedium{}2018  &                                  & 2\textsuperscript{nd} (Regional)                                 & \ieeehacks{IEEE SouthEastCon Hackathon} \\
-		\awardslow{}2018     & National                         & \tbp{Tau Beta Pi} (Engineering Honors Society)                                                             \\
-		\awardsmedium{}2018  & National                         & \hkn{IEEE Eta Kappa Nu} (ECE Honors Society)                                                               \\
-		\awardshigh{}2018    & National                         & \pkp{Phi Kappa Phi} (oldest all-discipline honor society)                                                  \\
-		\awardshigh{}2017    & International                    & \first{FIRST Robotics State Champion and World Quarter Finalist}                                           \\
-		\awardshigh{}2017    & International                    & \ibm{IBM Watson Scholar}                                                                                   \\
-		\awardslow{}2017     & 1/300                            & \bbs{Bowman Brockman Endowded Scholar}                                                                     \\
-		\awardshigh{}2016    & Top 30/nation                    & \beaver{MIT Beaverworks Robotics Institute}                                                                \\
-		\awardslow{}2016     & International                    & Conrad Spirit of Innovation Power Pitch Winner                                                             \\
-		\bottomrule
-	\end{tabular}
-\end{table}
+\newcommand{\awardscontent}{%
+	\toprule
+	\textbf{Year}        &
+	\textbf{Description} &
+	\textbf{Award}                                                                                                                                                       \\
+	\midrule
+	\awardshigh{}2019    & Departmental (1/700)             & Faculty Senior Scholar Award                                                                               \\
+	\awardslow{}2019     & 3\textsuperscript{rd} (Regional) & \ieeeweb{IEEE Website Design Competition}                                                                  \\
+	\awardshigh{}2018    & Top 30/1500                      & \nba{NBA Hackathon Finalist}                                                                               \\
+	\awardsmedium{}2018  &                                  & 2\textsuperscript{nd} (Regional)                                 & \ieeehacks{IEEE SouthEastCon Hackathon} \\
+	\awardslow{}2018     & National                         & \tbp{Tau Beta Pi} (Engineering Honors Society)                                                             \\
+	\awardsmedium{}2018  & National                         & \hkn{IEEE Eta Kappa Nu} (ECE Honors Society)                                                               \\
+	\awardshigh{}2018    & National                         & \pkp{Phi Kappa Phi} (honors society)                                                  \\
+	\awardshigh{}2017    & International                    & \first{\acr{FIRST} Robotics World Quarter Finalist}                                           \\
+	\awardshigh{}2017    & International                    & \ibm{IBM Watson Scholar}                                                                                   \\
+	\awardslow{}2017     & 1/300                            & \bbs{Bowman Brockman Endowded Scholar}                                                                     \\
+	\awardshigh{}2016    & Top 30/nation                    & \beaver{MIT Beaverworks Robotics Institute}                                                                \\
+	\awardslow{}2016     & International                    & Conrad Spirit of Innovation Power Pitch Winner                                                             \\
+	\bottomrule
+}
+
+\iftoggle{awardsmulti}
+{%
+	\renewcommand{\arraystretch}{1.1}
+	\begin{table}[h!]
+		\small
+		\begin{tabularx}{\columnwidth}{l l p{5.2cm}}
+			\awardscontent{}
+		\end{tabularx}
+	\end{table}
+}
+{%
+	% Awards Table
+	\begin{table}[h!]
+		\begin{tabularx}{lll}
+			\awardscontent{}
+		\end{tabularx}
+	\end{table}
+	% Makes sure that a table doesn't get moved
+	\FloatBarrier%
+}
+

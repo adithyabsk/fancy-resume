@@ -43,7 +43,7 @@ clean:
 
 lint: |
 	make indent
-	./lacheck_wrapper.sh $(MAIN).tex
+	# ./lacheck_wrapper.sh $(MAIN).tex
 	./chktex_wrapper.sh $(MAIN).tex
 
 once:

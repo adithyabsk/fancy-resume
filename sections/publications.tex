@@ -1,0 +1,16 @@
+% publications.tex
+
+\newenvironment*{pubenv}{}{} % dummy env
+
+\begin{pubenv}
+	\small
+	\textbf{Publications (non-reviewed)}
+	\vspace{-0.7em}
+	\AtNextBibliography{\small}
+	\printbibliography[keyword={nonpeer},heading=none]
+	\vspace{-0.2em}
+	\noindent\textbf{Technical Blogs}
+	\vspace{-0.7em}
+	\AtNextBibliography{\small}
+	\printbibliography[keyword={blog},heading=none]
+\end{pubenv}
