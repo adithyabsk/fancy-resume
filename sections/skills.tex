@@ -1,34 +1,29 @@
 % skills.tex
 
-\providecommand{\jobfield}{GENERAL}
-
 % special section that has an inline header with a 'hanging' paragraph
 \inlineheadsection{General Technical:}
 {%
 	Enjoys programming in Python, C, and \CPP\@.
 	Has prior experience with \LaTeX, JavaScript, Objective\=/C, Assembler, and Java. *nix command suite, open source project management, Git, and GitHub.
 }
+\vspace{0.5em}
 
-\IfSubStr{\jobfield}{DATASCIENCE}{%
-	\inlineheadsection{Data Science:}
-	{%
-		AWS EC2/\nsp{}Batch/\nsp{}Lambda, SQLAlchemy, BeatifulSoup, Selenium, OpenCV, Pandas, Numpy, Keras, Tensorflow, PyTorch, Scikit\=/Learn, Dask, Matplotlib, Seaborn, and Bokeh.
-	}
-}{}
+\inlineheadsection{Data Science:}
+{%
+	AWS EC2/\nsp{}Batch/\nsp{}Lambda, SQLAlchemy, BeatifulSoup, Selenium, OpenCV, Pandas, Numpy, Keras, Tensorflow, PyTorch, Scikit\=/Learn, Dask, Matplotlib, Seaborn, and Bokeh.
+}
+\vspace{0.5em}
 
-\IfSubStr{\jobfield}{SWE}{%
-	\inlineheadsection{Dev Ops:}
-	{%
-		First principles (CI/CD and incremental testing), Travis CI, Azure Pipelines, Bash, pre-commit hooks, and Python (PyPI) package management \& deployment.
-	}
-}{}
+\inlineheadsection{Dev Ops:}
+{%
+	First principles (CI/CD and incremental testing), Travis CI, Azure Pipelines, Bash, pre-commit hooks, and Python (PyPI) package management \& deployment.
+}
+\vspace{0.5em}
 
-\IfSubStr{\jobfield}{ACADEMIA}{%
-	\inlineheadsection{Research skills:}
-	{%
-		Tests of statistical significance, mathematical modeling, parsing research papers \& patents efficiently, typesetting for articles \& beamer presentations, and scientific communication.
-	}
-}{}
+\inlineheadsection{Research skills:}
+{%
+	Tests of statistical significance, mathematical modeling, parsing research papers \& patents efficiently, typesetting for articles \& beamer presentations, and scientific communication.
+}
 
 % Languages by years:
 % Objective-C: 2012--2014
