@@ -1,36 +1,48 @@
 % experience.tex
 
-% How to write a good experience section
-% 
+% Links
+\newcommand{\foreshadow}[1]{\href{https://github.com/georgianpartners/foreshadow}{#1}}
+\newcommand{\gppaperone}[1]{\href{https://github.com/georgianpartners/automl_benchmark}{#1}}
+\newcommand{\gppapertwo}[1]{\href{https://arxiv.org/abs/1808.06492}{#1}}
+\newcommand{\gppaperthree}[1]{\href{https://assert.pub/papers/1808.06492}{#1}}
+
+\newcommand{\gpblogone}[1]{\href{https://medium.com/georgian-impact-blog/python-tooling-makes-a-project-tick-181d567eea44}{#1}}
+\newcommand{\gpblogtwo}[1]{\href{https://medium.com/georgian-impact-blog/choosing-the-best-automl-framework-4f2a90cb1826}{#1}}
+\newcommand{\gpblogthree}[1]{\href{https://medium.com/georgian-impact-blog/automatic-machine-learning-aml-landscape-survey-f75c3ae3bbf2}{#1}}
+
+\newcommand{\plone}[1]{\href{https://support.precisionlender.com/hc/en-us/articles/115009642807-Rate-Sheet-Printouts}{#1}}
+
+\newcommand{\bitzer}[1]{\href{https://www.computerhistory.org/events/bio/Donald,Bitzer}{#1}}
+
+\newcommand{\nbahacks}[1]{\href{https://hackathon.nba.com/}{#1}}
 
 \headedsection{\href{https://georgianpartners.com/}{Georgian Partners}}
 {\textsc{Toronto, Canada}}
 {%
 	\headedsubsection{Data Science Intern}
-	{May \apo18--Current} % chktex 8
+	{May \apo18--Current}
 	{%
 		\bodytext{%
-			Spearhaded the development of an open source Python AutoML package.
+			Led the development of \foreshadow{Foreshadow}, an open-source Python \mbox{AutoML} package.
 			\begin{tightemize}
-				\item todo
-				\item todo
-				\item todo
+				\item Architected and developed the tool to automatically build and tune an end-to-end machine learning model that interops \texttt{sklearn} and \texttt{pandas}. (100\% branch test coverage)
+				\item Wrote an \gppaperone{extensible AutoML benchmark} package using \texttt{boto3}, \texttt{AWS Batch}, and \texttt{EC2} and an accompanying \gppapertwo{engineering research paper} that gained \gppaperthree{significant Twitter traction}.
+				\item \gpblogone{Authored} three \gpblogtwo{Medium blogs} on \gpblogthree{automatic machine learning} and Python tooling that were read 16,000\textsmaller{+} times.
 			\end{tightemize}
 		}
 	}
 }
 
-\headedsection{\href{https://www.csc.ncsu.edu/}{NC State CS Department}}
+\headedsection{\href{https://www.csc.ncsu.edu/}{Bitzer Lab}}
 {\textsc{Raleigh, NC}}
-{\headedsubsection{CS Research Assisstant}
+{\headedsubsection{CS Research Assistant}
 	{August \apo17--Current}
 	{%
 		\bodytext{%
-			Spearhaded the development of an open source Python AutoML package.
+			Was advised by \bitzer{Dr.\ Donald Bitzer} \textit{(inventor of plasma screen TV)} in the development of advances in bioinformatics.
 			\begin{tightemize}
-				\item todo
-				\item todo
-				\item todo
+				\item Upgraded a broken, legacy Python \texttt{django} website.
+				\item Implemented an updated version of an mRNA optimization algorithm to increase protein yield.
 			\end{tightemize}
 		}
 	}
@@ -39,14 +51,14 @@
 \headedsection{\href{https://www.nba.com/thunder/}{Oklahoma City Thunder}}
 {\textsc{Raleigh, NC}}
 {\headedsubsection{Data Science Intern}
-	{January \apo19--May \apo19} % chktex 8
+	{January \apo19--May \apo19}
 	{%
 		\bodytext{%
-			Spearhaded the development of an open source Python AutoML package.
+			After a strong performance at the \nbahacks{NBA Hackathon}, I was recruited to develop a basketball shot quality model.
 			\begin{tightemize}
-				\item todo
-				\item todo
-				\item todo
+				\item Grokked input data using game footage and developed dynamic data visualizations using \texttt{seaborn} and \texttt{bokeh}.
+				\item Presented a shot quality model (ROC AUC, 0.92) to team executives that increased downstream predictive accuracy by 1\%.
+				\item Delivered a deployable \acr{CLI} to the model that could be rerun yearly to mitigate model drift.
 			\end{tightemize}
 		}
 	}
@@ -55,19 +67,15 @@
 \headedsection{\href{https://precisionlender.com/}{Precision Lender}}
 {\textsc{Cary, NC}}
 {\headedsubsection{Software Engineering Intern}
-	{May \apo17--Aug \apo17} % chktex 8
+	{May \apo17--Aug \apo17}
 	{%
 		\bodytext{%
-			Spearhaded the development of an open source Python AutoML package.
+			Was invited by the CEO to work on the company's core product: a commercial loan pricing tool.
 			\begin{tightemize}
-				\item todo
-				\item todo
-				\item todo
+				\item Architected and developed a scalable natural language processing (NLP) system that cached queries using an Azure Service Fabric Stateful microservice. (C\#)
+				\item Demoed to the entire company and deployed the solution to production currently used by 100\textsmaller{s} of banks worldwide.
+				\item Documented a \plone{major release} and developed a web tooling interface operating on the production database. (Javascript)
 			\end{tightemize}
 		}
 	}
 }
-\vspace{-1.5em}
-\begin{center}
-	\emph{\small Please refer to \href{http://www.linkedin.com/in/adithyabsk}{Adithya's LinkedIn profile} for more experience along with references.}
-\end{center}%

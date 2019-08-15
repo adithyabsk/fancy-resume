@@ -2,14 +2,17 @@
 % Adithya Balaji
 
 % Start a document with the here given default font size and paper size.
+% \documentclass[10pt,letterpaper]{article}
 \documentclass[10pt,letterpaper,twocolumn]{article}
+
+% Optinally show/hide the image
+% \toggletrue{hideimage}
 
 % Set the page margins.
 \usepackage[letterpaper,left=0.25in,right=0.25in,top=0.25in,bottom=0.25in]{geometry}
 
 % Setup the language.
 \usepackage[english]{babel}
-% \hyphenation{Some-long-word} % How to use hyphenation cmd
 
 % Makes resume-specific commands available.
 \usepackage{resume}
@@ -18,43 +21,43 @@
 \sloppy  % this to relax whitespacing in favour of straight margins
 
 \newcommand\jobfield{DATASCIENCE,SWE,ACADEMIA}
-% \toggletrue{hideimage}
-% \toggletrue{disabletwocols}
 \input{sections/header.tex}
-
-% \roottitle{Summary}  % a root section title
-% \vspace{-1.3em}  % some vertical spacing
-% \input{sections/summary.tex}%
-% \spacedhrule{-0.2em}{-0.4em}
 
 \roottitle{Work Experience}
 \input{sections/experience.tex}%
-\spacedhrule{-0.2em}{-0.4em}{}
+\spacedhrule{0.5em}{-1.6em}%
 
 \roottitle{Extracurriculars}
 \input{sections/extracurriculars.tex}%
-\spacedhrule{0.6em}{-0.4em}%
+\spacedhrule{0.5em}{-1.6em}%
 
 \roottitle{Volunteering}
 \input{sections/volunteer.tex}%
-\spacedhrule{0.6em}{-0.4em}%
+\spacedhrule{0.5em}{}%
+
+\begin{center}
+	\emph{\small Please refer to \href{http://www.linkedin.com/in/adithyabsk}{Adithya's LinkedIn profile} for more experience along with references.}
+\end{center}%
 
 \roottitle{Education}
 \input{sections/education.tex}%
-\spacedhrule{0.5em}{-0.4em}%
+\spacedhrule{0.5em}{-1em}%
 
-\roottitle{Awards/Achievements/Societies}%
+\roottitle{Selected Awards and Achievements }%
+\vspace{-0.8em}%
 % Toggles provided awardshigh, awardslows, awardsmedium
 \toggletrue{awardshigh}
+\toggletrue{awardsmedium}
+\toggletrue{awardslow}
 \toggletrue{awardsmulti}
-\input{sections/awards.tex}
+\input{sections/awards.tex}%
+\spacedhrule{-2em}{-0.8em}%
 
-
-% \vspace{-2em} % (Play with this if table takes up too much space)
+% \vspace{-4em} % (Play with this if table takes up too much space)
 
 \roottitle{Selected Publications}%
 \input{sections/publications.tex}%
-\spacedhrule{1.2em}{-0.4em}
+\spacedhrule{-0.2em}{-0.8em}%
 
 \roottitle{Skills}
 \input{sections/skills.tex}
@@ -67,8 +70,8 @@
 \spacedhrule{1.6em}{-0.4em}
 
 \roottitle{Selected Projects}
-\input{sections/projects.tex}
-\spacedhrule{1.6em}{-0.4em}
+\input{sections/projects.tex}%
+\spacedhrule{1.6em}{-0.8em}
 
 \roottitle{Interests}
 \input{sections/interests.tex}

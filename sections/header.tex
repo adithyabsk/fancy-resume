@@ -2,54 +2,50 @@
 
 % title on top of the document
 
+\newcommand{\website}[1]{\href{}}{}
+
 % Main content
-\newcommand\headerinfo{%
-	\vspace{-2cm}
-	\maintitle{Adithya Balaji}{January 20, 1999}{Last update on \today}
-
-	\nobreakvspace{0.3em}  % add some page break averse vertical spacing
-
-	% \noindent prevents paragraph's first lines from indenting
-	% \mbox is used to obfuscate the email address
-	% \sbull is a spaced bullet
-	% \\ breaks the line into a new paragraph
-	\noindent
-	\href{mailto:adithyabsk@gmail.com}{adithyabsk\mbox{}@\mbox{}gmail.com}\sbull{}
+\newcommand{\headerinfo}{%
+	%\vspace{-2cm}
+	\maintitle{Adithya Balaji}
+	\vspace{0.4em}\\
 	\textsmaller{+}1 (919)--656--2815\sbull{}
+	\href{mailto:adithyabsk@gmail.com}{adithyabsk\mbox{}@\mbox{}gmail.com}\sbull{}
 	\href{https://github.com/adithyabsk}{github://adithyabsk}\sbull{}
-	\href{https://linkedin.com/in/adithyabsk}{linkedin://adithyabsk}\sbull{}
-	\href{https://www.adithyabalaji.com}{adithyabalaji.com}\\
+	\href{https://linkedin.com/in/adithyabsk}{linkedin://adithyabsk}
+	\vspace{0.4em}\\
 	Raleigh\sbull{}
 	North Carolina
+	% \nobreakvspace{0.3em}  % add some page break averse vertical spacing
 }
 
 % \null \vfill make sure that the image is centered with the multicols text
 % Modify columnsep to accomodate image and set back to default value
-\newcommand{\headercontent}{
+\newcommand{\headercontent}[3]{%
 	\iftoggle{hideimage}{%
-		\headerinfo{}
+		\headerinfo{}\spacedhrule{0.8em}{0.8em}
 	}{%
-		\setlength{\columnsep}{-38em}
+		\setlength{\columnsep}{-44em}
+		\vspace{#1}%
 		\begin{multicols}{2}
-			\null{}\vfill{}\noindent{}\hskip0.5em
-			\includegraphics[width=2.2cm]{headshot}
-			\columnbreak{}
-			\vfill
+			\hspace{#2} % remove some variable space if single column
+			\includegraphics[width=2cm]{headshot}
+			\vfill\null\columnbreak{}
 			\headerinfo{}
-			\vfill
+			\headerlinks{}
 		\end{multicols}
-		\setlength{\columnsep}{10pt}
-	}%
-	\spacedhrule{-0.2em}{-0.8em}
-	\vspace{1.5em}
+		\setlength{\columnsep}{10pt}\spacedhrule{-1.6em}{#3}
+	}
 }
 
-\iftoggle{disabletwocols}
-{
-	\headercontent{}
-}
-{
+% Some serious space hacking was necessary to make the header remain
+% constant between twocols and not twocols
+\makeatletter%
+\if@twocolumn%
 	\twocolumn[
-		\headercontent{}
+		\headercontent{-0.4cm}{0cm}{0.8em}
 	]
-}
+\else% \@twocolumnfalse
+	\headercontent{0em}{-0.55cm}{-0.6em}
+\fi
+\makeatother

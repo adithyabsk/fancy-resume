@@ -12,6 +12,9 @@
 
 %%% LOAD AND SETUP PACKAGES
 
+% Used for conditional statements when writing targetted resumes
+\usepackage{etoolbox}
+
 % To finetune lists with a inline heading and indented content.
 % See the Experiences section in the example.
 \usepackage{mdwlist}
@@ -33,9 +36,6 @@
 % Package for key-value interface between input packages
 \usepackage{listofitems}
 
-% Used for conditional statements when writing targetted resumes
-\usepackage{etoolbox}
-
 % Adds unbreakable dashes (e.g. \=/, \==, \===)
 \usepackage[shortcuts]{extdash}
 
@@ -49,7 +49,7 @@
 \usepackage[
   backend=biber,
   style=numeric,
-  sorting=ynt,
+  sorting=ydnt,
   url=false
 ]{biblatex}
 \addbibresource{publications.bib}
@@ -121,10 +121,10 @@
 %%% CUSTOM COMMANDS
 
 % main title (name) with subtitle (date)
-\newcommand\maintitle[3]{\vbox to 0pt{\hfill\scriptsize\color{gray} #3}\vspace{-0.4em}\noindent{\LARGE \textbf{#1}}\ \ \ \emph{#2}}
+\newcommand\maintitle[1]{\noindent{\huge \textbf{#1}}}
 
 % title for the root sections (experience, education, etc) of the resume
-\newcommand*\roottitle[1]{\subsection*{#1}\vspace{-0.3em}\nopagebreak[4]}
+\newcommand*\roottitle[1]{\section*{#1}\vspace{-0.8em}\nopagebreak[4]}
 
 % acr command, to quickly mark acronyms for special formatting
 \newcommand*\acr[1]{\textscale{.85}{#1}}
@@ -188,7 +188,7 @@
 \newcommand{\nobreakvspace}[1]{\nopagebreak[4]\vspace{#1}\nopagebreak[4]}
 
 % \spacedhrule a horizontal line with some vertical space before and after it
-\newcommand{\spacedhrule}[2]{\breakvspace{#1}\hrule\nobreakvspace{#2}}%
+\newcommand{\spacedhrule}[2]{\nobreakvspace{#1}\hrule\breakvspace{#2}}%
 
 % \inlineheadsection command, used for a new employer
 \newcommand{\inlineheadsection}[2]{%
@@ -208,7 +208,7 @@
 
 % Toggles for the header section
 \newtoggle{hideimage}
-\newtoggle{disabletwocols}
+\newtoggle{istwocols}
 
 % Toggles for the awards section
 % Initial idea source: https://tex.stackexchange.com/a/419224
