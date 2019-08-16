@@ -35,8 +35,10 @@
 	\awardslow{}2016     & International                    & Conrad Spirit of Innovation Power Pitch Winner                                                             \\
 }
 
-\iftoggle{awardsmulti}
-{%
+% Some serious space hacking was necessary to make the header remain
+% constant between twocols and not twocols
+\makeatletter%
+\if@twocolumn%
 	\renewcommand{\arraystretch}{1.1}
 	\begin{table}[h!]
 		\small
@@ -44,8 +46,7 @@
 			\awardscontent{}
 		\end{tabularx}
 	\end{table}
-}
-{%
+\else% \@twocolumnfalse
 	% Awards Table
 	\begin{table}[h!]
 		\begin{tabular}{lll}
@@ -54,7 +55,7 @@
 	\end{table}
 	% Makes sure that a table doesn't get moved
 	\FloatBarrier%
-}
-
+\fi
+\makeatother
 
 % Carolina FinTech hackathon
