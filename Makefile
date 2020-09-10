@@ -43,6 +43,11 @@ clean:
 
 lint: |
 	make indent
+	# This is commented out because lacheck has a bug with nested brackets in \newcommand
+	# https://tex.stackexchange.com/q/471596
+	# The issue was raised in the TeX mailing list but there has not been activity on that issue
+	# in a year.
+	# https://tug.org/pipermail/tex-live/2019-January/043083.html
 	# ./lacheck_wrapper.sh $(MAIN).tex
 	./chktex_wrapper.sh $(MAIN).tex
 
