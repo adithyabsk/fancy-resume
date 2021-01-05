@@ -7,6 +7,7 @@ repos:
 -   repo: local
     hooks:
     -   id: Linting
-        name: Checks Tex files
+        name: Check LaTeX files
         entry: make lint
+        pass_filenames: false
         language: system

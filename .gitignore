@@ -272,6 +272,5 @@ TSWLatexianTemp*
 
 # Custom
 .DS_Store
-*.pdf
 .refresh
 *.bak*
