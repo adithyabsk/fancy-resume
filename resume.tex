@@ -14,8 +14,17 @@
 % Makes resume-specific commands available.
 \usepackage{resume}
 
-% Optinally show/hide the image
-% \toggletrue{hideimage}
+% Bibliography
+\usepackage[
+  backend=biber,
+  style=numeric,
+  sorting=ydnt,
+  url=false
+]{biblatex}
+\addbibresource{publications.bib}
+\nocite{*}
+% Silences error: https://tex.stackexchange.com/a/39302/229240
+\usepackage{csquotes}
 
 \begin{document}  % begin the content of the document
 \sloppy  % this to relax whitespacing in favour of straight margins

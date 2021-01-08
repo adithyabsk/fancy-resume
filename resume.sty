@@ -12,6 +12,9 @@
 
 %%% LOAD AND SETUP PACKAGES
 
+% Make the pdf searchable
+\usepackage{cmap}
+
 % Used for conditional statements when writing targetted resumes
 \usepackage{etoolbox}
 
@@ -45,16 +48,6 @@
 % Add nicely formatted tables
 \usepackage{booktabs}
 
-% Bibliography
-\usepackage[
-  backend=biber,
-  style=numeric,
-  sorting=ydnt,
-  url=false
-]{biblatex}
-\addbibresource{publications.bib}
-\nocite{*}
-
 \usepackage{graphicx}
 \graphicspath{{images/}}
 
@@ -62,9 +55,6 @@
 \usepackage{placeins}
 \usepackage{widetable}
 \usepackage{tabularx}
-
-% Make the pdf searchable
-\usepackage{cmap}
 
 % XeTeX specific stuff with fall-back.
 \usepackage{ifxetex}
@@ -77,7 +67,6 @@
     [ ExternalLocation ,
       Mapping          = tex-text ,
       Numbers          = OldStyle ,
-      Ligatures        = {Common,Contextual} ,
       BoldFont         = texgyrepagella-bold.otf ,
       ItalicFont       = texgyrepagella-italic.otf ,
       BoldItalicFont   = texgyrepagella-bolditalic.otf ]
@@ -87,7 +76,6 @@
   \newfontfamily\newnums
     [ ExternalLocation ,
       Mapping          = tex-text ,
-      Ligatures        = {Common,Contextual} ,
       BoldFont         = texgyrepagella-bold.otf ,
       ItalicFont       = texgyrepagella-italic.otf ,
       BoldItalicFont   = texgyrepagella-bolditalic.otf ]
