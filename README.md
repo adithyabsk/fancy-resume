@@ -25,6 +25,13 @@ Simply run make
 $ make
 ```
 
+## Managing Packages
+
+```bash
+sudo tlmgr update --list
+# sudo tlmgr update --all
+```
+
 ### Source
 
 This resume is based on the amazing style file by [Cies Breijs](https://github.com/cies) To see the original [README, please go here.](https://github.com/cies/resume)
