@@ -1,11 +1,11 @@
 # My LaTeX resume
 
-[Click here to see the pdf](https://github.com/adithyabsk/resume/blob/master/resume.pdf)
+[Click here to see the pdf](https://github.com/adithyabsk/fancy-resume/blob/master/resume.pdf)
 
 ## Installation
 
 ```bash
-$ brew install mactex
+$ brew install --cask mactex
 $ brew install texshop # For GUI interface
 # $ pre-commit install
 ```
