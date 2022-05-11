@@ -2,8 +2,7 @@
 % Adithya Balaji
 
 % Start a document with the here given default font size and paper size.
-\documentclass[10pt,letterpaper]{article}
-% \documentclass[10pt,letterpaper,twocolumn]{article}
+\documentclass[10pt,letterpaper,twocolumn]{article}
 
 % Set the page margins.
 \usepackage[letterpaper,left=0.25in,right=0.25in,top=0.25in,bottom=0.25in]{geometry}
@@ -31,38 +30,39 @@
 
 \input{sections/header.tex}
 
+% \vspace{-2.5em}
+
 \roottitle{Work Experience}
 \input{sections/experience.tex}%
-\spacedhrule{0.5em}{-1.2em}%
+% \spacedhrule{0.2em}{-1em}%
 
-\roottitle{Extracurriculars}
-\input{sections/extracurriculars.tex}%
-\spacedhrule{0.5em}{-1em}%
+% \roottitle{Extracurriculars}
+% \input{sections/extracurriculars.tex}%
+% \spacedhrule{0em}{-0.4em}%
 
-\roottitle{Volunteering}
-\input{sections/volunteer.tex}%
-\spacedhrule{0.2em}{-1.2em}%
+% \roottitle{Volunteering}
+% \input{sections/volunteer.tex}%
+% \spacedhrule{0.2em}{-1.2em}%
 
 \roottitle{Education}
 \input{sections/education.tex}%
-\spacedhrule{0.5em}{-1em}%
+\spacedhrule{0.2em}{-0.5em}%
 
-\newpage % remove if nessesary
 \roottitle{Selected Awards and Achievements }%
 \vspace{-0.8em}%
 % Toggles provided awardshigh, awardslows, awardsmedium
 \toggletrue{awardshigh}
-\toggletrue{awardsmedium}
-\toggletrue{awardslow}
+% \toggletrue{awardsmedium}
+% \toggletrue{awardslow}
 \toggletrue{awardsmulti}
 \input{sections/awards.tex}%
-\spacedhrule{-2em}{-0.8em}%
+\spacedhrule{-2em}{-1em}%
 
 % \vspace{-4em} % (Play with this if table takes up too much space)
 
-\roottitle{Selected Publications}%
-\input{sections/publications.tex}%
-\spacedhrule{-0.2em}{-0.8em}%
+% \roottitle{Selected Publications}%
+% \input{sections/publications.tex}%
+% \spacedhrule{-0.2em}{-0.8em}%
 
 \roottitle{Skills}
 \input{sections/skills.tex}
@@ -72,14 +72,13 @@
 %     [RELAVENT_SKILLS]
 % }
 %
-\spacedhrule{1.6em}{-0.4em}
+\spacedhrule{1.6em}{-1em}
 
 \roottitle{Selected Projects}
 \input{sections/projects.tex}%
-\spacedhrule{1.6em}{-0.8em}
+% \spacedhrule{1.6em}{-0.8em}
 
-\roottitle{Interests}
-\input{sections/interests.tex}
-
+% \roottitle{Interests}
+% \input{sections/interests.tex}
 
 \end{document}
