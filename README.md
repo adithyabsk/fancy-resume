@@ -1,6 +1,6 @@
 # My LaTeX resume
 
-[Click here to see the pdf](https://github.com/adithyabsk/fancy-resume/blob/master/resume.pdf)
+[Click here to see the pdf](./resume.pdf)
 
 ## Installation
 
