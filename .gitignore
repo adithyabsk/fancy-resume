@@ -274,3 +274,4 @@ TSWLatexianTemp*
 .DS_Store
 .refresh
 *.bak*
+.idea/*
